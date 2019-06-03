@@ -1,16 +1,19 @@
 from player import ComputerPlayer
 
 def play_game(times):
-    for i in range(times):
-        print("1 - Rock \n2 - Paper\n3- Scissors\n")
+    print("Welcome to Rock, Paper, Scissors! \nType your choice to play with CPU! \nAfter you're done, please type Finish.")
+    player_lower = ''
+    while player_lower != 'finish': # in range(times):
         player = str(input("Your choice? "))
         player_lower = player.lower()
-        cp = ComputerPlayer(player_lower)  # cria o objeto da classe ComputerPlayer
-        CPU = cp.play()  # escolhe um valor pra cpu
+        if player_lower not in ["rock", "paper", "scissors", "finish"]:
+            print("Something is wrong, please try again!")
+            player = str(input("Your choice? "))
+            player_lower = player.lower()
+        cp = ComputerPlayer(player_lower)
+        CPU = cp.cpu_turn()
         print(cp.compare(CPU))
         print("\n------\n")
 
-
 if __name__ == '__main__':
-    print("Rock, paper, scissors!")
-    play_game(3)
+    play_game(1)

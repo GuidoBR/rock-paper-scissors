@@ -9,37 +9,32 @@ class Player():
 
         if self.player_choice.lower() == "rock":
             if cpu_choice == "rock":
-                return "Empate! A CPU escolheu {}".format(cpu_choice)
+                return "Tie! CPU chose {}.".format(cpu_choice)
             if cpu_choice == "paper":
-                return "Vitória da CPU! A CPU escolheu {}".format(cpu_choice)
+                return "CPU wins! CPU chose {}.".format(cpu_choice)
             if cpu_choice == "Scissors":
-                return "Vitória do Jogador! A CPU escolheu {}".format(cpu_choice)
+                return "Player wins! CPU chose {}.".format(cpu_choice)
 
         elif self.player_choice.lower() == "paper":
             if cpu_choice == "rock":
-                return "Vitória do Jogador! A CPU escolheu {}".format(cpu_choice)
+                return "Player wins! CPU chose {}.".format(cpu_choice)
             if cpu_choice == "paper":
-                return "Empate! A CPU escolheu {}".format(cpu_choice)
+                return "Tie! CPU chose {}.".format(cpu_choice)
             if cpu_choice == "scissors":
-                return "Vitória da CPU! A CPU escolheu {}".format(cpu_choice)
+                return "CPU wins! CPU chose {}.".format(cpu_choice)
 
         elif self.player_choice.lower() == "scissors":
             if cpu_choice == "rock":
-                return "Vitória da CPU! A CPU escolheu {}".format(cpu_choice)
+                return "CPU wins! CPU chose {}.".format(cpu_choice)
             if cpu_choice == "paper":
-                return "Vitória do Jogador! A CPU escolheu {}".format(cpu_choice)
+                return "Player wins! CPU chose {}.".format(cpu_choice)
             if cpu_choice == "scissors":
-                return "Empate! A CPU escolheu {}".format(cpu_choice)
+                return "Tie! CPU chose {}.".format(cpu_choice)
 
 
 class ComputerPlayer(Player):
-
-    '''
-        Retorna uma escolha aleatória entre as 3 possíveis
-        Dica: use a propriedade self.choice e a função randint da biblioteca random
-    '''
-    def play(self):
+    def cpu_turn(self):
         choices = ["rock", "paper", "scissors"]
-        cpu_choice = choices[randint(0,2)]
+        cpu_choice = choices[randint(0, 2)]
         return cpu_choice
 
